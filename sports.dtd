@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+
+    <!ELEMENT Player ( #PCDATA ) >
+    <!ELEMENT Sports ( Sport, Categories ) >
+    <!ELEMENT Sport (Discipline,Compet*)*>
+    <!ELEMENT Categories (Category*)>
+    <!ELEMENT Discipline (Titre,Sportif*,Trophet,Classement) >
+        <!ELEMENT Compet (Title,Player*,Organizer*,Player*,Trophy,Ranking*)>
+
+    <!ELEMENT Ranking ( #PCDATA ) >
+    <!ELEMENT Title ( #PCDATA ) >
+    <!ELEMENT Sportif ( #PCDATA )>
+    <!ELEMENT Trophet ( #PCDATA )>
+    <!ELEMENT Classement ( #PCDATA )>
+    <!ELEMENT Titre ( #PCDATA ) >
+    <!ELEMENT Trophy ( #PCDATA ) >
+    <!ELEMENT Organizer ( #PCDATA ) >
+    <!ELEMENT Category EMPTY >
+    <!ENTITY % CompetContenu "texte" >
+    <!ATTLIST Categories desc CDATA #REQUIRED >
+    <!ATTLIST Category note CDATA #IMPLIED code ID CDATA #IMPLIED >
+    <!ATTLIST Category desc CDATA #IMPLIED >
+    <!ATTLIST Organizer year CDATA #IMPLIED>
+    <!ATTLIST Compet cat  IDREF CDATA #IMPLIED %CompetContenu; >
+
+    <!ATTLIST Compet annee(2020|2021|2022) CDATA  "2020" >
+    <!ATTLIST Discipline categorie IDREF CDATA #IMPLIED >
+    <!ATTLIST Discipline nbre CDATA #IMPLIED>
